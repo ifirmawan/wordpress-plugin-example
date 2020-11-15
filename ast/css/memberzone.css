@@ -1,0 +1,457 @@
+/* Hide on touch */
+.uk-notouch .memberzone-hidden-notouch {
+	display: none !important;
+}
+
+/* -----------------------------------------------------------------------------
+ * Lebar Elemen
+ * ---------------------------------------------------------------------------*/
+[class*='memberzone-width'] {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+/* Lebar penuh */
+.memberzone-width-100 {
+    width: 100%;
+}
+
+/* Lebar 50%, 1/2 */
+.memberzone-width-50,
+.memberzone-width-1-2 {
+	width: 50%;
+}
+
+/* Lebar 1/3, 33% */
+.memberzone-width-1-3 {
+	width: 33.333%;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+	.memberzone-width-50,
+	.memberzone-width-medium-1-5 {
+		width: 50%;
+	}
+	
+	.memberzone-width-medium-1-3 {
+		width: 33.333%;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Form
+ * ---------------------------------------------------------------------------*/
+.memberzone-form-blank {
+	border-color: transparent !important;
+	border-style: dashed !important;
+	background: none !important;
+}
+
+.memberzone-form-blank:focus {
+	border-color: #dddddd !important;
+}
+
+/* -----------------------------------------------------------------------------
+ * Tombol 
+ * ---------------------------------------------------------------------------*/
+/* Menghilangkan padding dan border dalam pada Firefox */
+.memberzone-button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+.memberzone-button {
+	/* Memperbaiki clickable input pada iOS. */
+	-webkit-appearance: none;
+	/* Menghilangkan margin pada Chrome, Safari, dan Opera. */
+	margin: 0;
+	/* Menghilangkan border pada tombol */
+	border: none;
+	/* Menangani hidden overflow pada IE. */
+	overflow: visible;
+	/* Memperbaiki properti font yang tidak diturunkan dari elemen button. */
+	font: inherit;
+	color: #444;
+	/* Menangani nilai turunan atribut text-transform yang tidak konsisten. */
+	text-transform: none;
+	/* Penggayaan utama dari tombol. */
+	display: inline-block;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 12px;
+	background: #eee;
+	vertical-align: middle;
+	/* Membuat tinggi tombol. */
+	line-height: 28px;
+	/* Untuk elemen input saat line-height tidak membuat tinggi tombol. */
+	min-height: 30px;
+	/* Berhubungan dengan pengelompokan tombol. */
+	font-size: 1rem;
+	/* Untuk elemen anchor. */
+	text-decoration: none;
+	text-align: center;
+	border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.memberzone-button:not(:disabled) {
+  cursor: pointer;
+}
+
+.memberzone-button:hover,
+.memberzone-button:focus {
+	/* Menerapkan gaya hover untuk focus. */
+	background-color: #f5f5f5;
+	color: #444;
+	/* Menghilangkan gaya fokus baku. */
+	outline: none;
+	/* Untuk elemen anchor. */
+	text-decoration: none;
+	border-color: rgba(0, 0, 0, 0.16);
+}
+
+.memberzone-button:active,
+.memberzone-button.memberzone-active {
+	background-color: #eee;
+	color: #444;
+}
+
+/* Modifikasi warna tombol untuk tombol utama. */
+.memberzone-button-primary {
+	background-color: #00a8e6;
+	color: #fff;
+}
+
+.memberzone-button-primary:hover,
+.memberzone-button-primary:focus {
+	background-color: #35b3ee;
+	color: #fff;
+}
+
+.memberzone-button-primary:active,
+.memberzone-button-primary.memberzone-active {
+	background-color: #0091ca;
+	color: #fff;
+}
+
+/* Modifikasi warna tombol untuk tombol hijau. */
+.memberzone-button-success {
+	background-color: #8cc14c;
+	color: #ffffff;
+}
+/* Hover */
+.memberzone-button-success:hover,
+.memberzone-button-success:focus {
+	background-color: #8ec73b;
+	color: #ffffff;
+}
+/* Active */
+.memberzone-button-success:active,
+.memberzone-button-success.memberzone-active {
+	background-color: #72ae41;
+	color: #ffffff;
+}
+
+/* Modifikasi warna tombol untuk tombol atensi. */
+.memberzone-button-attention {
+	background-color: #da314b;
+	color: #ffffff;
+}
+/* Hover */
+.memberzone-button-attention:hover,
+.memberzone-button-attention:focus {
+	background-color: #e4354f;
+	color: #ffffff;
+}
+/* Active */
+.memberzone-button-attention:active,
+.memberzone-button-attention.memberzone-active {
+	background-color: #c91032;
+	color: #ffffff;
+}
+
+/* Grup tombol. */
+.memberzone-button-group {
+	/* 1 */
+	display: inline-block;
+	vertical-align: middle;
+	/* 2 */
+	position: relative;
+	/* 3 */
+	font-size: 0.001px;
+	/* 4 */
+	white-space: nowrap;
+}
+
+.memberzone-button-group > * {
+	display: inline-block;
+}
+/* 5 */
+.memberzone-button-group .memberzone-button {
+	vertical-align: top;
+}
+
+/* -----------------------------------------------------------------------------
+ * Modal
+ * ---------------------------------------------------------------------------*/
+.memberzone-modal {
+	/* 1 */
+	display: none;
+	/* 2 */
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 8010;
+	/* 3 */
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	/* 4 */
+	background: rgba(0, 0, 0, 0.6);
+	/* 5 */
+	opacity: 0;
+	-webkit-transition: opacity 0.15s linear;
+	transition: opacity 0.15s linear;
+	/* 6 */
+	touch-action: cross-slide-y pinch-zoom double-tap-zoom;
+	/* 7 */
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+/* Mengantisipasi duplikasi scrollbar */
+.uk-modal-page,
+.uk-modal-page body {
+	overflow: hidden;
+}
+
+/* Dialog */
+.memberzone-modal-dialog {
+	/* 1 */
+	position: relative;
+	/* 2 */
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 50px auto;
+	padding: 20px;
+	width: 600px;
+	max-width: 100%;
+	max-width: calc(100% - 20px);
+	/* 3 */
+	background: #ffffff;
+	/* 4 */
+	opacity: 0;
+	-webkit-transform: translateY(-100px);
+	transform: translateY(-100px);
+	-webkit-transition: opacity 0.3s linear, -webkit-transform 0.3s ease-out;
+	transition: opacity 0.3s linear, transform 0.3s ease-out;
+	border-radius: 4px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Membuang margin dari last-child */
+.memberzone-modal-dialog > :not([class*='memberzone-modal-']):last-child {
+	margin-bottom: 0;
+}
+
+/* Untuk hape */
+@media (max-width: 767px) {
+	.memberzone-modal-dialog {
+		width: auto;
+		margin: 10px auto;
+	}
+}
+
+/* Kondisi dibuka */
+.memberzone-modal.uk-open {
+	opacity: 1;
+}
+
+.uk-open .memberzone-modal-dialog {
+	/* 4 */
+	opacity: 1;
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+
+/* -----------------------------------------------------------------------------
+ * Alert
+ * ---------------------------------------------------------------------------*/
+.memberzone-alert {
+	margin-bottom: 15px;
+	padding: 10px;
+	background: #ebf7fd;
+	color: #2d7091;
+	border: 1px solid rgba(45, 112, 145, 0.3);
+	border-radius: 4px;
+	text-shadow: 0 1px 0 #fff;
+}
+
+* + .memberzone-alert {
+	margin-top: 15px;
+}
+
+.memberzone-alert > :last-child {
+	margin-bottom: 0;
+}
+
+.memberzone-alert > .memberzone-close:first-child {
+	float: right;
+}
+
+.memberzone-alert > .memberzone-close:first-child + * {
+	margin-top: 0;
+}
+
+.entry-content h4, .comment-content h4 {
+		text-align:center;
+}
+#memberzone-list-menu-userpage ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#memberzone-list-menu-userpage li {
+    display: inline;
+}
+.media-object{
+	max-width:150px;
+	max-height:150px;
+}
+.profilval{
+	color:#000;
+	background-color:#ececec;
+	
+}
+
+	#left{
+      width: 200px;
+      float: left;
+    }
+    #right{
+      margin-left: 200px; 
+    }
+    .clear{
+      clear: both;
+    }
+    .navigation { list-style:none; font-size:12px; }
+	.navigation li{ display:inline; }
+	.navigation li a{ display:block; float:left; padding:4px 9px; margin-right:7px; border:1px solid #efefef; }
+	.navigation li span.current { display:block; float:left; padding:4px 9px; margin-right:7px; border:1px solid #efefef; background-color:#f5f5f5;  }	
+	.navigation li span.dots { display:block; float:left; padding:4px 9px; margin-right:7px;  }	
+	
+	
+h3 {
+ display: inline;
+}
+
+.memberzone_form label { display: block; float: left; width: 130px; }
+.memberzone_form input[type="text"], .memberzone_form input[type="password"],
+.memberzone_form input[type="email"] { padding: 4px 8px; background: #f0f0f0; border: 1px solid #ccc; }
+.memberzone_form input[type="text"]:focus, .memberzone_form input[type="password"]:focus,
+.memberzone_form input[type="email"]:focus { border-color: #aaa; }
+.memberzone_errors { padding: 8px; border: 1px solid #f50; margin: 0 0 15px; }
+
+
+
+#memberzone-label{ display:inline-block;width:150px; }
+
+
+.memberzone-alert-box {
+    color:#555;
+    border-radius:10px;
+    font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
+    padding:10px 10px 10px 36px;
+    margin:10px;
+}
+
+.memberzone-alert-box span {
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.error {
+    background:#ffecec; /* url('images/error.png') no-repeat 10px 50%*/
+    border:1px solid #f5aca6;
+}
+.success {
+    background:#e9ffd9;
+    border:1px solid #a6ca8a;
+}
+.warning {
+    background:#fff8c4;
+    border:1px solid #f2c779;
+}
+.notice {
+    background:#e3f7fc;
+    border:1px solid #8ed9f6;
+}
+
+
+.mzone-grid-container{
+	width: 100%;
+	max-width: 1200px;
+}
+.mzone-grid-container *{
+	box-sizing:border-box;
+}
+/* cleafix hack */
+.mzone-row:before,
+.mzone-row:after{
+	content:"";
+	display:table;
+	clear:both;
+}
+/* mzone-column height */
+[class*='mzone-col-']{
+	float:left;
+	min-height:1px;
+	width:16.66%;
+	/* -- out guttter--- */
+	padding:12px;
+	/* background-mzone-color: #FFDCDC; */
+}
+.mzone-col-1{ width:16.66%; }
+.mzone-col-2{ width:33.33%; }
+.mzone-col-3{ width:50%; }
+.mzone-col-4{ width:66.664%;}
+.mzone-col-5{ width:83.33%; }
+.mzone-col-6{ width:100%; }
+.mzone-outline, .mzone-outline *{
+    /*outline: 1px solid #F6A1A1; */
+}
+/*-- some extra mzone-column content styling --*/
+[class*='mzone-col-'] > p {
+     background-mzone-color: #FFC2C2; 
+     padding: 0;
+     margin: 0;
+     text-align: left; 
+     mzone-color: white; 
+}
+
+@media all and(max-width: 800px){
+	.mzone-col-1{ width: 33.33%;    }
+    .mzone-col-2{ width: 50%;    }
+	.mzone-col-3{ width: 83.33%;    }
+	.mzone-col-4{ width: 100%;    }
+	.mzone-col-5{ width: 100%;    }
+	.mzone-col-6{ width: 100%;     }
+	.row .mzone-col-2:last-of-type{
+		width: 100%;
+	}
+	.row .mzone-col-5 ~ .mzone-col-1{
+		width: 100%;
+	}
+}
+@media all and (max-width: 650px){
+	.mzone-col-1{ width:50%; }
+	.mzone-col-2{ width:100%; }
+	.mzone-col-3{ width:100%; }
+	.mzone-col-4{ width:100%;}
+	.mzone-col-5{ width:100%; }
+	.mzone-col-6{ width:100%; }
+
+}
